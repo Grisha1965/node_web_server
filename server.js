@@ -1,6 +1,7 @@
 const express = require("express");
 const hbs = require("hbs");
 
+const port = process.env.PORT || 3000;
 const app = express();
 
 hbs.registerPartials(__dirname + "/views/partials");
@@ -34,4 +35,4 @@ app.get("/bad", (req, res) => {
   res.send('<h1 style="color:red;">404 PAGE NOT FOUNT</h1>');
 });
 
-app.listen(3000, () => console.log("Server is running on port 3000"));
+app.listen(port, () => console.log(`Server is running on port ${port}`));
